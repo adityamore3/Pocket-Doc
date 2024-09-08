@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+    --green: #16a085; 
+    --black: #444; 
+    --light-color: #777; 
+    --box-shadow: .5rem .5rem 0 rgba(22, 160, 133, .2);
+    --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+    --border: .2rem solid var(--green);
+}
+
+/* Global Styles */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all .2s ease-out;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+/* Header Section */
+.header {
+    padding: 2rem 9%;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    background: #fff;
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.header .logo i {
+    color: var(--green);
+}
+
+.header .navbar {
+    display: flex;
+}
+
+.header .navbar a {
+    font-size: 1.7rem;
+    color: var(--light-color);
+    margin-left: 2rem;
+}
+
+.header .navbar a:hover {
+    color: var(--green);
+}
+
+/* Styles for menu button */
+#menu-btn {
+    font-size: 2.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color: var(--green);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display:inline;
+    /* Hide by default */
+}
+
+#menu-btn:hover {
+    color: var(--green);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline;
+    }
+
+    .header .navbar {
+        display: none; /* Hide the default navbar on smaller screens */
+    }
+
+    /* Show the navbar when the burger button is clicked */
+    .header.active .navbar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+    }
+
+    .header.active .navbar a {
+        margin: 1rem 0;
+        font-size: 1.6rem;
+        color: var(--black);
+        text-align: center;
+    }
+
+    /* Ensure the search bar and button are responsive */
+    .search-bar {
+
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #search-input {
+        width: 100%;
+    }
+
+    #search-btn {
+        width: 100%;
+    }
+}
+
+/* Doctor Search Section */
+.doctor-search {
+    padding: 6rem 9% 2rem;
+    background: #fff;
+}
+
+.doctor-search .container {
+    max-width: 800px;
+    margin: 0 auto;
+    /* padding: 0 2rem; */
+    padding: 10rem 9% 2rem; 
+}
+
+.doctor-search h1 {
+    font-size: 3rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.doctor-search p {
+    font-size: 1.5rem;
+    color: #777;
+    margin-bottom: 2rem;
+}
+
+.search-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+#search-input {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#search-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #16a085; 
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background .2s ease-out;
+}
+
+#search-btn:hover {
+    background-color: #29b97d;
+}
+
+/* Doctor Results */
+.doctor-results {
+    margin-top: 2rem;
+}
+
+.doctor-result {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background: #f9f9f9;
+}
+
+.doctor-result h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.doctor-result p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.doctor-result button {
+    background-color: #16a085; 
+}
+
+.doctor-result button:hover {
+    background-color: #16a085; 
+}
+
+/* Appointment Form Section */
+.appointment-form {
+    padding: 6rem 9% 2rem;
+    background: #fff;
+}
+
+.appointment-form .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.appointment-form h2 {
+    font-size: 2.5rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.appointment-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.form-group input,
+.form-group select {
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #16a085;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background .2s ease-out;
+}
+
+button:hover {
+    background-color: #14a075;
+}
+
+.response-message {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Footer Section */
+.footer {
+    background: #f5f2f2;
+    padding: 0;
+    /* box-shadow: 0 -.5rem 1.5rem rgba(0, 0, 0, 0.1); */
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 2rem;
+}
+
+.footer .box-container .box {
+    padding: 5rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    padding: 0.5rem 0;
+    text-decoration: none;
+}
+
+.footer .box-container .box a i {
+    padding-right: 0.5rem;
+    color: var(--green);
+}
+
+.footer .box-container .box a:hover i {
+    padding-right: 1rem;
+}
+
+.footer .credit {
+    padding: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--light-color);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.footer .credit span {
+    color: var(--green);
+}

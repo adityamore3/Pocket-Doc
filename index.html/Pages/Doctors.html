@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Consultation</title>
+    <link rel="stylesheet" href="/css/doc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- For FontAwesome icons -->
+    <style>
+        .notification {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            border-radius: 5px;
+        }
+        .notification.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo"><i class="fas fa-heartbeat"></i> Doctor Consultation</a>
+            <nav class="navbar"></nav>
+            <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
+        </div>
+    </header>
+
+    <main>
+        <section class="doctor-search">
+            <div class="container">
+                <h1>Find a Doctor</h1>
+                <p>Search for doctors by specialization and book a consultation.</p>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Enter specialization">
+                    <button id="search-btn">Search</button>
+                </div>
+                <div class="doctor-results" id="doctor-results">
+                    <!-- Doctor results will be displayed here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="appointment-form" id="appointment-form-section" style="display:none;">
+            <div class="container">
+                <h2>Book an Appointment</h2>
+                <form id="appointment-form">
+                    <div class="form-group">
+                        <label for="doctor">Select Doctor</label>
+                        <select id="doctor" name="doctor" required>
+                            <option value="" disabled selected>Select a doctor</option>
+                            <!-- Doctor options will be populated here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    <button type="submit">Book Appointment</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <section class="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>quick links</h3>
+                    <a href="#"> <i class="fas fa-chevron-right"></i> home</a>
+                    <a href="#"> <i class="fas fa-chevron-right"></i> services</a>
+                </div>
+                <div class="box">
+                    <h3>our services</h3>
+                    <a href="#"> <i class="fas fa-chevron-right"></i> Smart Disease Prediction</a>
+                    <a href="#"> <i class="fas fa-chevron-right"></i> Doctor Consultations</a>
+                    <a href="#"> <i class="fas fa-chevron-right"></i> Medical History</a>
+                </div>
+                <div class="box">
+                    <h3>contact info</h3>
+                    <a href="#"> <i class="fas fa-phone"></i> +91-22-3338 397</a>
+                    <a href="#"> <i class="fas fa-envelope"></i> PocketDoctor.@gmail.com</a>
+                    <a href="#"> <i class="fas fa-map-marker-alt"></i> Mumbai, India</a>
+                </div>
+                <div class="box">
+                    <h3>follow us</h3>
+                    <a href="#"> <i class="fab fa-facebook-f"></i> facebook</a>
+                    <a href="#"> <i class="fab fa-twitter"></i> twitter</a>
+                    <a href="https://www.linkedin.com/in/aditya-more-682233274"> <i class="fab fa-linkedin"></i> linkedin</a>
+                    <a href="#"> <i class="fab fa-instagram"></i> instagram</a>
+                </div>
+            </div>
+            <div class="credit">created by <span>Group 19</span> | ©2024 all rights reserved</div>
+        </section>
+    </footer>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script src="/js/doc.js"></script>
+</body>
+</html>
